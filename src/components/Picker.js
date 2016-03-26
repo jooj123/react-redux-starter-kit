@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
 export default class Picker extends Component {
-
   render() {
     const { value, onChange, options } = this.props;
 
