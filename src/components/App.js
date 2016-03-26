@@ -5,6 +5,9 @@ class App extends Component {
     return (
       <div>
         <h1>React Redux Starter Kit</h1>
+        <p>
+          <a href="">Goto Reddit example</a>
+        </p>
       </div>
     );
   }
