@@ -3,7 +3,7 @@ import React, { PropTypes, Component } from 'react';
 class Posts extends Component {
 
   static propTypes = {
-    posts: PropTypes.array.isRequired
+    posts: PropTypes.array.isRequired,
   };
 
   render() {

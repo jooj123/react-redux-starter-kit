@@ -1,11 +1,20 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../actions';
-import Picker from './Picker';
-import Posts from './Posts';
+import { selectReddit, fetchPostsIfNeeded, invalidateReddit } from '../../actions';
+import Picker from '../Picker/Picker';
+import Posts from '../Posts/Posts';
 import Helmet from 'react-helmet';
 
 class AsyncExample extends Component {
+
+  static propTypes = {
+    selectedReddit: PropTypes.string.isRequired,
+    posts: PropTypes.array.isRequired,
+    isFetching: PropTypes.bool.isRequired,
+    lastUpdated: PropTypes.number,
+    dispatch: PropTypes.func.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -39,6 +48,18 @@ class AsyncExample extends Component {
   render() {
     const { selectedReddit, posts, isFetching, lastUpdated } = this.props;
     const isEmpty = posts.length === 0;
+    let postsOutput = '';
+
+    if (isEmpty) {
+      postsOutput = (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>);
+    } else {
+      postsOutput = (
+        <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+          <Posts posts={posts} />
+        </div>
+      );
+    }
+
     return (
       <div>
         <Helmet title="Async Example" />
@@ -59,24 +80,11 @@ class AsyncExample extends Component {
             </a>
           }
         </p>
-        {isEmpty
-          ? (isFetching ? <h2>Loading...</h2> : <h2>Empty.</h2>)
-          : <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-              <Posts posts={posts} />
-            </div>
-        }
+        {postsOutput}
       </div>
     );
   }
 }
-
-AsyncExample.propTypes = {
-  selectedReddit: PropTypes.string.isRequired,
-  posts: PropTypes.array.isRequired,
-  isFetching: PropTypes.bool.isRequired,
-  lastUpdated: PropTypes.number,
-  dispatch: PropTypes.func.isRequired,
-};
 
 function mapStateToProps(state) {
   const { selectedReddit, postsByReddit } = state;

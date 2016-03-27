@@ -1,0 +1,15 @@
+@import '../../../node_modules/normalize.css/normalize.css';
+@import '../../css/variables.css';
+
+.root {
+  width: 800px;
+  margin: 0 auto;
+
+  @media (--medium-screen-and-lower) {
+    width: 100%;
+  }
+}
+
+.container {
+  padding: 15px;
+}
