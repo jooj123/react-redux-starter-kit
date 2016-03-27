@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import Navigation from './Navigation';
+import Helmet from 'react-helmet';
 
 class App extends Component {
+
+  static propTypes = {
+    children: PropTypes.element,
+  };
+
   render() {
     return (
       <div>
-        <h1>React Redux Starter Kit</h1>
-        <p>
-          <a href="">Goto Reddit example</a>
-        </p>
+        <Helmet title="React Redux Starter Kit" />
+        <Navigation />
+        {this.props.children}
       </div>
     );
   }

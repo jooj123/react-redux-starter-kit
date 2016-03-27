@@ -1,14 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
-import NotFound from './components/NotFound.js';
-import App from './components/App.js';
-
+import NotFound from './components/NotFound';
+import App from './components/App';
+import AsyncExample from './components/AsyncExample';
 import { Router, Route, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+
+const store = configureStore();
 
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <Route path="*" component={NotFound} />
-    </Route>
-  </Router>
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route path="/async" component={AsyncExample} />
+        <Route path="*" component={NotFound} />
+      </Route>
+    </Router>
+  </Provider>
 ), document.getElementById('main'));

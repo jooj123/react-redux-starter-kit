@@ -7,7 +7,7 @@ class Picker extends Component {
       PropTypes.string.isRequired
     ).isRequired,
     value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
   };
 
   render() {
