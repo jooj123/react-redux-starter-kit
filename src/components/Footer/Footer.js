@@ -5,7 +5,7 @@ class Footer extends Component {
   render() {
     return (
       <div className={style.root}>
-        Footer placeholder text
+        &copy; My Company 2016
       </div>
     );
   }
