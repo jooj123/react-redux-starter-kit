@@ -1,0 +1,30 @@
+:root {
+
+  // colors
+  --nav-background-color:   #f5f5f5;
+  --nav-text-color:         #000000;
+  --active-color:           #4CAF50;
+
+  // Typography
+  --font-family:            Arial, Helvetica, sans-serif;
+
+  // Sizes
+  --main-container-size:    800px;
+
+  // Media query screen sizes and useful queries
+  --screen-xs-min:          480px;  /* Extra Small Devices, Phones */
+  --screen-sm-min:          768px;  /* Small Devices, Tablets */
+  --screen-md-min:          992px;  /* Medium Devices, Desktops */
+  --screen-lg-min:          1200px; /* Large Devices, Wide Screens */
+
+  @custom-media --extra-small-screen (width >= 480px) and (width < 768px);
+  @custom-media --small-screen (width >= 768px) and (width < 992px);
+  @custom-media --medium-screen (width >= 992px) and (width < 1200px);
+  @custom-media --large-screen (width >= 1200px);
+
+  @custom-media --small-screen-and-lower (width < 992px);
+  @custom-media --medium-screen-and-lower (width < 1200px);
+
+  // Custom Selectors
+  @custom-selector :--heading h1, h2, h3, h4, h5, h6;
+}
