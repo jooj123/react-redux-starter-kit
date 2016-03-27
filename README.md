@@ -1,8 +1,15 @@
 # react-redux-starter-kit
-React Redux Starter Kit
+React Redux Starter Kit which can be deployed to Amazon S3 or other cloud file storage system.
+
+The main principles around this starter kit are:
+* Easy and cheap deployment to cloud file storage (eg. S3) - WILL NEVER REQUIRE A NODE SERVER!
+* Small bundle size, only contains what you need
+* Tries to be as unopinionated as possible when it comes to the tech stack
+* Only contains libraries that are actively maintained
+* Great dev tools to speed up development time and help maintainability
 
 This is currently in development.
-Stay tuned.
+Stay tuned - please star in the meantime :)
 
 ## Features
 
