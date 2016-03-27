@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link, IndexLink } from 'react-router';
 import style from './Navigation.css';
 
 class Navigation extends Component {
@@ -7,8 +7,8 @@ class Navigation extends Component {
     return (
       <div className={style.root}>
         <ul>
-          <li><Link to={'/'}>Home</Link></li>
-          <li><Link to={'/async'}>Async Example</Link></li>
+          <li><IndexLink to="/" activeClassName={style.active}>Home</IndexLink></li>
+          <li><Link to="/async" activeClassName={style.active}>Async Example</Link></li>
         </ul>
       </div>
     );

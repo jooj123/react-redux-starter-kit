@@ -24,8 +24,8 @@
   a:hover:not(.active) {
     background-color: #111;
   }
+}
 
-  .active {
-    background-color: var(--active-color);
-  }
+.active {
+  background-color: var(--active-color);
 }

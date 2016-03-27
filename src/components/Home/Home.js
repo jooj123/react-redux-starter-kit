@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import style from './Header.css';
+import style from './Home.css';
 
-class Header extends Component {
+class Home extends Component {
   render() {
     return (
       <div className={style.root}>
-        <h1>React Redux Starter Kit</h1>
+        Home page content..
       </div>
     );
   }
 }
 
-export default Header;
+export default Home;
