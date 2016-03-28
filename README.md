@@ -13,7 +13,7 @@ Stay tuned - please star in the meantime :)
 
 ## Features
 
-- [Webpack](http://webpack.github.io/) / [css-loader](https://github.com/webpack/css-loader) Webpack is used for module bundling and css-loader is a css loader for webpack which is configued to use css modules, see: https://github.com/css-modules/css-modules for more info.
+- [Webpack](http://webpack.github.io/) with [css-loader](https://github.com/webpack/css-loader) Webpack is used for module bundling and css-loader is a css loader for webpack which is configued to use css modules, see: https://github.com/css-modules/css-modules for more info.
 
 - [react-transform-hmr](https://github.com/gaearon/react-transform-hmr) for hot reloading of CSS and JS.
 
@@ -21,7 +21,7 @@ Stay tuned - please star in the meantime :)
 
 - [Babel](http://babeljs.io/) is a modular JavaScript transpiler that allows you to write next generation JavaScript right now.
 
-- [PostCSS](https://github.com/postcss/postcss) / [cssnext](http://cssnext.io/) PostCSS is a tool for transforming styles with JS plugins and cssnext allows you to write future CSS syntax right now.
+- [PostCSS](https://github.com/postcss/postcss) with [cssnext](http://cssnext.io/) PostCSS is a tool for transforming styles with JS plugins and cssnext allows you to write future CSS syntax right now.
 
 - [react-router](https://github.com/rackt/react-router) is flexible routing system.
 
