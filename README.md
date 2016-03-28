@@ -1,8 +1,9 @@
 # react-redux-starter-kit
 React Redux Starter Kit is a simple starter kit that can be deployed to run on Amazon S3 or other cloud file storage systems.
+Its a very solid starting point for creating a powerful, flexible and maintainable react website.
 
 The main principles around this starter kit are:
-* Easy and cheap deployment to cloud file storage (eg. S3) - WILL NEVER REQUIRE A NODE SERVER!
+* Easy and cheap deployment to cloud file storage (eg. S3) - **WILL NEVER REQUIRE A NODE SERVER TO RUN!**
 * Small bundle size, only contains what you need
 * Tries to be as unopinionated as possible when it comes to the tech stack
 * Only contains libraries that are actively maintained
@@ -28,6 +29,15 @@ Stay tuned - please star in the meantime :)
 - [react-helmet](https://github.com/nfl/react-helmet) is used for managing the document title, meta, link, script, and base tags of each page in the app.
 
 - [eslint](http://eslint.org/) is used for linting JS code
+
+
+## Requirements
+
+## Quick Start
+
+## Build and Deploy
+
+## Test
 
 
 
