@@ -18,7 +18,7 @@ Stay tuned - please star in the meantime :)
 
 - [react-transform-hmr](https://github.com/gaearon/react-transform-hmr) for hot reloading of CSS and JS.
 
-- [Redux](https://github.com/rackt/redux) is the next evolution of flux, unidirectional data flow, makes actions composable, reduces the boilerplate code and makes hot–reloading better. 
+- [Redux](https://github.com/rackt/redux) is the next evolution of flux, unidirectional data flow, makes actions composable, reduces the boilerplate code and makes hot–reloading better.
 
 - [Babel](http://babeljs.io/) is a modular JavaScript transpiler that allows you to write next generation JavaScript right now.
 
@@ -28,12 +28,17 @@ Stay tuned - please star in the meantime :)
 
 - [react-helmet](https://github.com/nfl/react-helmet) is used for managing the document title, meta, link, script, and base tags of each page in the app.
 
-- [eslint](http://eslint.org/) is used for linting JS code
+- [eslint](http://eslint.org/) is an awesome JS linter to help you discover problems with code without executing it.
+
+- [stylelint](https://github.com/stylelint/stylelint) is the next generation CSS linter.
 
 
 ## Requirements
 
-todo
+  * Mac OS X, Linux or Windows
+  * [Node.js](https://nodejs.org/) v4.2 or newer
+  * [npm](https://docs.npmjs.com/) v2.14 or newer
+  * Text editor or IDE preferably pre-configured with React JSX highlight/ESlint and Stylelint
 
 ## Quick Start
 
