@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --colors --watch --inline --hot --open --content-base ./src",
-    "eslint": "eslint ./src"
+    "eslint": "eslint ./src",
+    "stylelint": "stylelint ./src/components/**/*.css ./src/css/*.css",
+    "lint": "npm run stylelint && npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -44,6 +46,8 @@
     "postcss-loader": "^0.8.2",
     "postcss-nested": "^1.0.0",
     "react-transform-hmr": "^1.0.4",
+    "stylelint": "^5.2.1",
+    "stylelint-config-standard": "^4.0.1",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
