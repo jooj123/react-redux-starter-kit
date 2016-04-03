@@ -4,7 +4,8 @@
   "description": "React Redux Starter Kit",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --colors --watch --inline --hot --open --content-base ./src",
+    "start": "webpack-dev-server --progress --watch --inline --hot --open",
+    "build": "webpack --progress",
     "eslint": "eslint ./src",
     "stylelint": "stylelint ./src/components/**/*.css ./src/css/*.css",
     "lint": "npm run stylelint && npm run eslint"
@@ -41,6 +42,7 @@
     "eslint": "^2.4.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.2.3",
+    "file-loader": "^0.8.5",
     "postcss-cssnext": "^2.5.1",
     "postcss-import": "^8.0.2",
     "postcss-loader": "^0.8.2",
