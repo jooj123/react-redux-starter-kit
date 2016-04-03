@@ -57,12 +57,16 @@ $ npm start
 This will bundle and copy files to the *build* folder:
 
 ```shell
-$ npm run build                 # or, `npm run build -- release`
+$ npm run build
 ```
 
 By default, it builds in *debug* mode. If you need to build in release
 mode, just add a `-- release` flag. This will optimize the output bundle for
-production.
+production:
+
+```shell
+$ npm run build -- release
+```
 
 ## Deploy
 
