@@ -1,4 +1,4 @@
-const path = require('path');
+import webpack from 'webpack';
 
 const AUTOPREFIXER_BROWSERS = [
   'Android 2.3',
@@ -10,18 +10,58 @@ const AUTOPREFIXER_BROWSERS = [
   'Opera >= 12',
   'Safari >= 7.1',
 ];
-//const DEBUG = !process.argv.includes('--release');
-const DEBUG = true;
+
+const DEBUG = process.argv.indexOf('release') === -1;
+const VERBOSE = process.argv.indexOf('verbose') !== -1;
+const GLOBALS = {
+  __DEV__: DEBUG,
+};
 
 module.exports = {
+  context: `${__dirname}/src`,
   entry: {
-    app: [path.resolve(__dirname, 'src/index.js')],
+    javascript: './index.js',
+    html: './index.html',
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: `${__dirname}/build`,
     filename: 'bundle.js',
   },
-  devtool: 'cheap-module-eval-source-map',
+  // Choose a developer tool to enhance debugging
+  // http://webpack.github.io/docs/configuration.html#devtool
+  devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
+  devServer: {
+    port: 8080,
+    historyApiFallback: true,
+  },
+
+  cache: DEBUG,
+  debug: DEBUG,
+
+  stats: {
+    colors: true,
+    reasons: DEBUG,
+    hash: VERBOSE,
+    version: VERBOSE,
+    timings: true,
+    chunks: VERBOSE,
+    chunkModules: VERBOSE,
+    cached: VERBOSE,
+    cachedAssets: VERBOSE,
+  },
+
+  plugins: [
+    new webpack.DefinePlugin(GLOBALS),
+    ...(!DEBUG ? [
+      new webpack.optimize.DedupePlugin(),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: VERBOSE,
+        },
+      }),
+      new webpack.optimize.AggressiveMergingPlugin(),
+    ] : []),
+  ],
   module: {
     loaders: [
       {
@@ -31,6 +71,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react', 'stage-0'],
         },
+      },
+      {
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]',
       },
       {
         test: /\.css$/,

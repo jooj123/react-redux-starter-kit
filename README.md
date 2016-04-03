@@ -44,7 +44,27 @@ Stay tuned - please star in the meantime :)
 
 todo
 
-## Build and Deploy
+## Run Dev Server
+
+You can run a local webserver during development:
+
+```shell
+$ npm start
+```
+
+## Build
+
+This will bundle and copy files to the *build* folder:
+
+```shell
+$ npm run build                 # or, `npm run build -- release`
+```
+
+By default, it builds in *debug* mode. If you need to build in release
+mode, just add a `-- release` flag. This will optimize the output bundle for
+production.
+
+## Deploy
 
 todo
 
@@ -52,12 +72,31 @@ todo
 
 todo
 
+## Linting
+
+`eslint` and `stylelint` are included in this starter kit to lint JavaScript and CSS styles.
+To lint both run:
+
+```shell
+$ npm run lint
+```
+
+Or you can run them seperately:
+
+```shell
+$ npm run eslint
+```
+
+```shell
+$ npm run stylelint
+```
+
 ## Todo
 
 - add unit tests
 - add e2e tests
 - add deployment scripts
 - add 1 more redux example to combine reducers
-- add dev, qa, prod specific config 
+- add dev, qa, prod specific config
 
 
