@@ -52,5 +52,12 @@ todo
 
 todo
 
+## Todo
+
+- add unit tests
+- add e2e tests
+- add deployment scripts
+- add 1 more redux example to combine reducers
+- add dev, qa, prod specific config 
 
 
