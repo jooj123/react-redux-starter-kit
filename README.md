@@ -41,7 +41,13 @@ Please star if you like this repo :)
 
 ## Quick Start
 
-todo
+Clone the repo and install:
+
+```shell
+$ git clone https://github.com/jooj123/react-redux-starter-kit.git myapp
+$ cd myapp
+$ npm install                   # install packages (might take a while)
+```
 
 ## Run Dev Server
 
