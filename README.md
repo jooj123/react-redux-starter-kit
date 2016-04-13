@@ -13,7 +13,7 @@ Please star if you like this repo :)
 
 ## Features
 
-- [Webpack](http://webpack.github.io/) with [css-loader](https://github.com/webpack/css-loader) Webpack is used for module bundling and css-loader is a css loader for webpack which is configued to use css modules, see: https://github.com/css-modules/css-modules for more info.
+- [Webpack](http://webpack.github.io/) with [css-loader](https://github.com/webpack/css-loader) Webpack is used for module bundling and css-loader is a css loader for webpack which is configued to use css modules, see: [css-modules](https://github.com/css-modules/css-modules) for more info.
 
 - [react-transform-hmr](https://github.com/gaearon/react-transform-hmr) for hot reloading of CSS and JS.
 
