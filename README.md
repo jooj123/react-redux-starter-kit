@@ -9,8 +9,7 @@ The main principles around this starter kit are:
 * Only contains libraries that are actively maintained
 * Great dev tools to speed up development time and help maintainability
 
-This is currently in development.
-Stay tuned - please star in the meantime :)
+Please star if you like this repo :)
 
 ## Features
 
@@ -61,16 +60,24 @@ $ npm run build
 ```
 
 By default, it builds in *debug* mode. If you need to build in release
-mode, just add a `-- release` flag. This will optimize the output bundle for
+mode, run the command below. This will optimize the output bundle for
 production:
 
 ```shell
-$ npm run build -- release
+$ npm run build:prod
 ```
 
-## Deploy
+## Deploy to S3
 
-todo
+To deploy to S3 you need to make sure you have the [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) installed.
+After the cli is setup and you have created a build, you can simply run:
+
+```shell
+$ npm run deploy:s3
+```
+
+Which will upload to your S3 bucket.
+Make sure you modify the package.json `deploy:s3` script to ensure it has your own bucket configured.
 
 ## Test
 
@@ -100,7 +107,9 @@ $ npm run stylelint
 - add unit tests
 - add e2e tests
 - add deployment scripts
+- clean up paths
 - add 1 more redux example to combine reducers
 - add dev, qa, prod specific config
+- remove the WATCH env?
 
 

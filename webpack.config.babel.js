@@ -11,11 +11,16 @@ const AUTOPREFIXER_BROWSERS = [
   'Safari >= 7.1',
 ];
 
-const DEBUG = process.argv.indexOf('release') === -1;
-const VERBOSE = process.argv.indexOf('verbose') !== -1;
+const DEBUG = process.env.NODE_ENV !== 'production';
+const WATCH = process.env.WATCH; // used for conditionally loading HMR
+const VERBOSE = false;
 const GLOBALS = {
+  'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
   __DEV__: DEBUG,
 };
+
+/* eslint-disable no-console */
+console.log('DEBUG: ', DEBUG);
 
 module.exports = {
   context: `${__dirname}/src`,
@@ -70,6 +75,23 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react', 'stage-0'],
+          // Wraps all React components into arbitrary transforms
+          // https://github.com/gaearon/babel-plugin-react-transform
+          plugins: WATCH ? [
+            ['react-transform', {
+              transforms: [
+                {
+                  transform: 'react-transform-hmr',
+                  imports: ['react'],
+                  locals: ['module'],
+                }, {
+                  transform: 'react-transform-catch-errors',
+                  imports: ['react', 'redbox-react'],
+                },
+              ],
+            },
+            ],
+          ] : [],
         },
       },
       {
@@ -103,3 +125,4 @@ module.exports = {
     ];
   },
 };
+
