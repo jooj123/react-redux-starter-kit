@@ -27,7 +27,7 @@ Please star if you like this repo :)
 
 - [react-helmet](https://github.com/nfl/react-helmet) is used for managing the document title, meta, link, script, and base tags of each page in the app.
 
-- [eslint](http://eslint.org/) is an awesome JS linter to help you discover problems with code without executing it.
+- [eslint](http://eslint.org/) is an awesome JS linter to help you discover problems with code without executing it. Uses the airbnb standard config.
 
 - [stylelint](https://github.com/stylelint/stylelint) is the next generation CSS linter.
 
@@ -76,14 +76,17 @@ $ npm run build:prod
 ## Deploy to S3
 
 To deploy to S3 you need to make sure you have the [AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) installed.
-After the cli is setup and you have created a build, you can simply run:
+After the AWS CLI is setup and you have created a build, you can use the default *s3_url* specified in the package.json or you can override this by using the below command:
+
+```shell
+$ npm config set react-redux-starter-kit:s3_url s3://[YOUR_SPECIFIC_BUCKET_NAME]
+```
+
+You can then use the following command to deploy the build to the S3 path:
 
 ```shell
 $ npm run deploy:s3
 ```
-
-Which will upload to your S3 bucket.
-Make sure you modify the package.json `deploy:s3` script to ensure it has your own bucket configured.
 
 ## Test
 
@@ -112,8 +115,6 @@ $ npm run stylelint
 
 - add unit tests
 - add e2e tests
-- add deployment scripts
-- clean up paths
 - add 1 more redux example to combine reducers
 - add dev, qa, prod specific config
 - remove the WATCH env?

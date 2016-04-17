@@ -1,14 +1,18 @@
 {
+  "private": false,
   "name": "react-redux-starter-kit",
   "version": "0.0.1",
   "description": "React Redux Starter Kit",
   "main": "index.js",
+  "config": {
+    "s3_url": "s3://martin-jujou"
+  },
   "scripts": {
-    "start": "WATCH=true webpack-dev-server --progress --watch --inline --hot --open",
+    "start": "WATCH=true webpack-dev-server --progress --watch --inline --hot --open --content-base build",
     "build": "webpack --progress",
     "build:prod": "NODE_ENV=production webpack --progress",
     "eslint": "eslint ./src",
-    "deploy:s3": "aws s3 sync ./build s3://martin-jujou --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
+    "deploy:s3": "aws s3 sync ./build $npm_package_config_s3_url --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers",
     "stylelint": "stylelint ./src/components/**/*.css ./src/css/*.css",
     "lint": "npm run stylelint && npm run eslint"
   },
