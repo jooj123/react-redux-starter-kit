@@ -4,6 +4,10 @@
   "version": "0.0.1",
   "description": "React Redux Starter Kit",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.2.0",
+    "npm": "^3.0.0"
+  },
   "config": {
     "s3_url": "s3://martin-jujou"
   },
