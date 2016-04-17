@@ -31,6 +31,8 @@ Please star if you like this repo :)
 
 - [stylelint](https://github.com/stylelint/stylelint) is the next generation CSS linter.
 
+- [mocha](https://mochajs.org/) used as the unit testing framework, [chai](http://chaijs.com/) nice assertion library and [enzyme](https://github.com/airbnb/enzyme) for a jquery syntax to easily test react components.
+
 
 ## Requirements
 
@@ -90,7 +92,17 @@ $ npm run deploy:s3
 
 ## Test
 
-todo
+To perform unit tests you can run the following:
+
+```shell
+$ npm run test:unit
+```
+
+If you would like to run unit tests and linting in one command you can run:
+
+```shell
+$ npm test
+```
 
 ## Linting
 
@@ -113,10 +125,10 @@ $ npm run stylelint
 
 ## Todo
 
-- add unit tests
 - add e2e tests
 - add 1 more redux example to combine reducers
 - add dev, qa, prod specific config
 - remove the WATCH env?
+- Upgrade to the latest React
 
 
