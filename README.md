@@ -31,7 +31,7 @@ Please star if you like this repo :)
 
 - [stylelint](https://github.com/stylelint/stylelint) is the next generation CSS linter.
 
-- [mocha](https://mochajs.org/) used as the unit testing framework, [chai](http://chaijs.com/) nice assertion library and [enzyme](https://github.com/airbnb/enzyme) for a jquery syntax to easily test react components.
+- [mocha](https://mochajs.org/) used as the unit testing framework, [chai](http://chaijs.com/) nice assertion library and [enzyme](https://github.com/airbnb/enzyme) for a jquery syntax to easily test react components. Mocha runs against [jsdom](https://github.com/tmpvar/jsdom) so tests are very fast and doesnt need a browser.
 
 
 ## Requirements
@@ -116,11 +116,11 @@ $ npm run lint
 Or you can run them seperately:
 
 ```shell
-$ npm run eslint
+$ npm run lint:js
 ```
 
 ```shell
-$ npm run stylelint
+$ npm run lint:style
 ```
 
 ## Todo
