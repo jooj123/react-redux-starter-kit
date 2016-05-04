@@ -74,6 +74,7 @@
     "redbox-react": "^1.2.3",
     "stylelint": "^5.2.1",
     "stylelint-config-standard": "^4.0.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },

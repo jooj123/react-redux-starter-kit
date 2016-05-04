@@ -99,6 +99,10 @@ module.exports = {
         loader: 'file?name=[name].[ext]',
       },
       {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2)$/,
+        loader: 'url-loader?limit=10000',
+      },
+      {
         test: /\.css$/,
         loaders: [
           'style-loader',
