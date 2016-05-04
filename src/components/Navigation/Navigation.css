@@ -1,6 +1,9 @@
 @import '../../css/variables.css';
 
 .root {
+
+  margin-top: 64px;
+
   ul {
     list-style-type: none;
     margin: 0;
