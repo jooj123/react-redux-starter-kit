@@ -12,7 +12,6 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 const DEBUG = process.env.NODE_ENV !== 'production';
-const WATCH = process.env.WATCH; // used for conditionally loading HMR
 const VERBOSE = false;
 const GLOBALS = {
   'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
@@ -23,22 +22,18 @@ const GLOBALS = {
 console.log('DEBUG: ', DEBUG);
 
 module.exports = {
-  context: `${__dirname}/src`,
-  entry: {
-    javascript: './index.js',
-    html: './index.html',
-  },
+  entry: [
+    './src/index.js',
+    './src/index.html',
+  ],
   output: {
     path: `${__dirname}/build`,
     filename: 'bundle.js',
+    publicPath: '/build/',
   },
   // Choose a developer tool to enhance debugging
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
-  devServer: {
-    port: 8080,
-    historyApiFallback: true,
-  },
 
   cache: DEBUG,
   debug: DEBUG,
@@ -75,23 +70,7 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react', 'stage-0'],
-          // Wraps all React components into arbitrary transforms
-          // https://github.com/gaearon/babel-plugin-react-transform
-          plugins: WATCH ? [
-            ['react-transform', {
-              transforms: [
-                {
-                  transform: 'react-transform-hmr',
-                  imports: ['react'],
-                  locals: ['module'],
-                }, {
-                  transform: 'react-transform-catch-errors',
-                  imports: ['react', 'redbox-react'],
-                },
-              ],
-            },
-            ],
-          ] : [],
+          plugins: [],
         },
       },
       {
