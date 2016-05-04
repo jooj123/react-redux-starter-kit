@@ -126,7 +126,6 @@ $ npm run stylelint
 ## Todo
 
 - add e2e tests
-- add 1 more redux example to combine reducers
 - add dev, qa, prod specific config
 - remove the WATCH env?
 - Upgrade to the latest React
