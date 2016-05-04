@@ -34,7 +34,7 @@ module.exports = {
   },
   // Choose a developer tool to enhance debugging
   // http://webpack.github.io/docs/configuration.html#devtool
-  devtool: DEBUG ? 'cheap-module-eval-source-map' : false,
+  devtool: DEBUG ? 'cheap-module-inline-source-map' : false,
   devServer: {
     port: 8080,
     historyApiFallback: true,

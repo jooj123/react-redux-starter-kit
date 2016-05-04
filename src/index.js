@@ -7,17 +7,31 @@ import AsyncExample from './components/AsyncExample/AsyncExample';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
+import getMuiTheme from 'material-ui/lib/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/lib/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
 
 const store = configureStore();
 
+// for material ui
+const ThemedApp = () => (
+  <MuiThemeProvider muiTheme={getMuiTheme()}>
+    <Provider store={store}>
+      <Router history={browserHistory}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Home} />
+          <Route path="/async" component={AsyncExample} />
+          <Route path="*" component={NotFound} />
+        </Route>
+      </Router>
+    </Provider>
+  </MuiThemeProvider>
+);
+
 render((
-  <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />
-        <Route path="/async" component={AsyncExample} />
-        <Route path="*" component={NotFound} />
-      </Route>
-    </Router>
-  </Provider>
+  <ThemedApp />
 ), document.getElementById('main'));
